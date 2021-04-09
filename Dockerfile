@@ -10,10 +10,10 @@ RUN apt-get update -y && apt-get install nginx -y
 # step 3: make /var/www as main working directory so if you jump in on running container, you don't use cd (change dir) command anymore
 WORKDIR /var/www
 
-# step 4: 
+# step 4: cp nginx custom configuration to overwrite default nginx configuration
 COPY default.conf /etc/nginx/sites-enabled/default
 
-# step 5:
+# step 5: cp static content from local directory to the container
 COPY hello.txt /var/www
 
 # expose port 80 as basic web server (HTTP) to listen
