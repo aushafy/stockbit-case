@@ -1,0 +1,18 @@
+name: CICD DevOps test case
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file ./2-cicd/Dockerfile --tag aushafy/stockbit-nginx:latest
+    - name: Login to docker hub
+      run: docker login --username aushafy --password ${{ secrets.DOCKER_REGISTRY_TOKEN }}
+    - name: Push to registry
+      run: docker push aushafy/stockbit-nginx:latest
+    
