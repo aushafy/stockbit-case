@@ -20,6 +20,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: SSH to instance
-      run: ssh -i ${{ SSH_PRIVATE_KEY }} ec2-user@ec2-3-0-61-252.ap-southeast-1.compute.amazonaws.com
+      run: ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ec2-user@ec2-3-0-61-252.ap-southeast-1.compute.amazonaws.com
     - name: Run Docker
       run: sudo docker run -d -p 80:80 aushafy/stockbit-nginx:latest
