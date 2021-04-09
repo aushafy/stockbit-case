@@ -1,0 +1,1 @@
+this file was made for testing main directory for Nginx
