@@ -33,5 +33,5 @@ jobs:
         # Command execution location
         working-directory: /home/ubuntu
         # Comment for Send-Command
-        comment: # optional, default is Executed by Github Actions
+        comment: Executed by Github Actions
 
