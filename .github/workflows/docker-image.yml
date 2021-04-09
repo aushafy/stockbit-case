@@ -34,7 +34,7 @@ jobs:
         # AWS EC2 Instance id or ids
         instance-ids: i-05679be56c8a5b917
         # Bash command you want to execute
-        command: sudo docker run -d -p 80:80 aushafy/stockbit-nginx:latest
+        command: docker run -d -p 80:80 aushafy/stockbit-nginx:latest
         # Command execution location
         working-directory: /home/ubuntu
         # Comment for Send-Command
