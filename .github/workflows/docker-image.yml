@@ -39,4 +39,7 @@ jobs:
         working-directory: /home/ubuntu
         # Comment for Send-Command
         comment: Executed by Github Actions
+      # Catch SSM outputs
+   - name: Get the outputs
+     run: echo "The Command id is ${{ steps.ssm.outputs.command-id }}"
 
