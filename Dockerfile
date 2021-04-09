@@ -7,7 +7,7 @@ FROM ubuntu:latest
 # step 2: need to update repo and then install nginx
 RUN apt-get update -y && apt-get install nginx -y
 
-# step 3: make /var/www as main working directory so if you jump in on running container, you don't use cd (change dir) command anymore
+# step 3: make /var/www as main working directory so if you jump in on running container, so you no need to use cd (change dir) command anymore
 WORKDIR /var/www
 
 # step 4: cp nginx custom configuration to overwrite default nginx configuration
